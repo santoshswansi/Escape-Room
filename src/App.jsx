@@ -22,608 +22,6 @@ function App() {
   console.log("App rendering")
 
   useEffect(() => {
-    const questions = [
-      {
-        question:
-          "There are two ducks in front of a duck, two ducks behind a duck and a duck in the middle. How many ducks are there?",
-        hint: "Put numeric value",
-        answer: 3,
-      },
-      {
-        question: "Alex is Charlie's father. Who of them was born later?",
-        hint: "",
-        answer: "Charlie",
-      },
-      {
-        question:
-          "The giraffe is taller than the kangaroo but shorter than the palm. Which animal is the tallest?",
-        hint: "",
-        answer: "giraffe",
-      },
-      {
-        question:
-          "There are 4 floors in the hotel. The higher the floor, the more people live there. Which floor does the elevator go to most often?",
-        hint: "Put numeric value",
-        answer: 1,
-      },
-      {
-        question:
-          "There are 10 fingers on two hands. How many fingers are there on ten hands?",
-        hint: "Put numeric value",
-        answer: 50,
-      },
-      {
-        question:
-          "A man has 53 socks in his drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are fused and he is completely in the dark. How many socks must he take out to make 100 per cent certain he has a pair of black socks?",
-        hint: "Put numeric value",
-        answer: 40,
-      },
-      {
-        question:
-          "How many cases do you need if you have to pack 112 pairs of shoes into cases that each hold 28 shoes?",
-        hint: "Put numeric value",
-        answer: 8,
-      },
-      {
-        question: "7, 14, 42, 168, ?",
-        hint: "",
-        answer: "840",
-      },
-      {
-        question:
-          "Mr Smith has 4 daughters. Each of his daughters has a brother. How many children does Mr Smith have?",
-        hint: "Put numeric value",
-        answer: "5",
-      },
-      {
-        question: "How many squares are there on the chessboard? ",
-        hint: "x",
-        answer: "204",
-      },
-      {
-        question: "3P = 12, P + 2Y = 10, Y - B = 2, P + Y * B = ? ",
-        hint: "",
-        answer: "5",
-      },
-      {
-        question:
-          "RACECAR, MURDRUM, SAGAS, ATTACK, and REPAPER. Find the odd one out.",
-        hint: "",
-        answer: "ATTACK",
-      },
-      {
-        question: "Which letter of the alphabet has the most water?",
-        hint: "",
-        answer: "C",
-      },
-      {
-        question: "What kind of dog keeps the best time?",
-        hint: "",
-        answer: "Watchdog",
-      },
-      {
-        question:
-          "What time of day, when written in a capital letters, is the same forwards, backwards and upside down?",
-        hint: "",
-        answer: "Noon",
-      },
-      {
-        question: "Laughing Out",
-        hint: "",
-        answer: "Loud",
-      },
-      {
-        question: "A tasty reward given to well behaved dogs and kids",
-        hint: "",
-        answer: "Treat",
-      },
-      {
-        question: "A caribbean shape that makes ships disappear",
-        hint: "",
-        answer: "Triangle",
-      },
-      {
-        question: "It takes two people to do this",
-        hint: "",
-        answer: "Tango",
-      },
-      {
-        question: "What has a face and two hands but no arms or legs?",
-        hint: "",
-        answer: "Clock",
-      },
-      {
-        question:
-          "What five-letter word becomes shorter when you add two letters to it?",
-        hint: "",
-        answer: "Short",
-      },
-      {
-        question:
-          "What word begins and ends with an 'E' but only has one letter?",
-        hint: "",
-        answer: "Envelope",
-      },
-      {
-        question: "What has a neck but no head?",
-        hint: "",
-        answer: "Bottle",
-      },
-      {
-        question: "What type of cheese is made backwards?",
-        hint: "",
-        answer: "Edam",
-      },
-      {
-        question: "What gets wetter as it dries?",
-        hint: "",
-        answer: "Towel",
-      },
-      {
-        question: "Which letter of the alphabet has the most water?",
-        hint: "",
-        answer: "C",
-      },
-      {
-        question:
-          "What starts with a 'P', ends with an 'E' and has thousands of letters?",
-        hint: "",
-        answer: "Post Office",
-      },
-      {
-        question: "What has to be broken before you can eat it?",
-        hint: "",
-        answer: "Egg",
-      },
-      {
-        question: "What begins with T, ends with T and has T in it?",
-        hint: "",
-        answer: "Teapot",
-      },
-      {
-        question: "Teddy bears are never hungry because they are always what?",
-        hint: "",
-        answer: "Stuffed",
-      },
-      {
-        question: "What belongs to you but others use it more than you do?",
-        hint: "",
-        answer: "Name",
-      },
-      {
-        question:
-          "The more you take always, the larger it becomes? What is it?",
-        hint: "",
-        answer: "Hole",
-      },
-      {
-        question: "What is full of holes, but can still hold a lot of water?",
-        hint: "",
-        answer: "Sponge",
-      },
-      {
-        question: "Where do fish keep their money?",
-        hint: "",
-        answer: "Riverbank",
-      },
-      {
-        question:
-          "What do you get when you cross an automobile with a household animal?",
-        hint: "",
-        answer: "Carpet",
-      },
-      {
-        question:
-          "Mary's father has 4 children; three are named Nana, Nene, and Nini. So what is the 4th child's name?",
-        hint: "",
-        answer: "Mary",
-      },
-      {
-        question: "What bone has a sense of humor?",
-        hint: "",
-        answer: "Humorous",
-      },
-      {
-        question:
-          "The more of them you take, the more you leave behind. What are they?",
-        hint: "",
-        answer: "Footsteps",
-      },
-      {
-        question: "What is that you will break every time you name it?",
-        hint: "",
-        answer: "Silence",
-      },
-      {
-        question: "What has four fingers and one thumb, but is not alive?",
-        hint: "",
-        answer: "Glove",
-      },
-      {
-        question: "What flies without wings?",
-        hint: "",
-        answer: "Time",
-      },
-      {
-        question: "What turns everything around, but does not move?",
-        hint: "",
-        answer: "Mirror",
-      },
-      {
-        question: "What is half of two plus two?",
-        hint: "",
-        answer: "Three",
-      },
-      {
-        question: "What word looks the same upside down and backwards?",
-        hint: "",
-        answer: "Swims",
-      },
-      {
-        question: "What kind of fish chases a mouse?",
-        hint: "",
-        answer: "Catfish",
-      },
-      {
-        question:
-          "Your mother's brother's only brother-in-law is asleep on your coach. Who is asleep on your couch?",
-        hint: "",
-        answer: "Dad",
-      },
-      {
-        question: "What's the difference between here and there?",
-        hint: "",
-        answer: "T",
-      },
-      {
-        question: "What goes up and down without moving?",
-        hint: "",
-        answer: "Stairs",
-      },
-      {
-        question: "Take off my skin and I won't cry, but you will, What am I?",
-        hint: "",
-        answer: "Onion",
-      },
-      {
-        question:
-          "What doesn't get any wetter, no matter how much rain falls on it?",
-        hint: "",
-        answer: "Water",
-      },
-      {
-        question: "What sits in a corner while traveling all around the world?",
-        hint: "",
-        answer: "Stamp",
-      },
-      {
-        question:
-          "I have a face, two arms, and two hands, yet I can not move. I count to twelve, yet I can not speak. I can still tell you something everyday.",
-        hint: "",
-        answer: "Clock",
-      },
-      {
-        question:
-          "You enter a dark room. You have only one match. There is an oil lamp, a furnace, and a stove in the room. Which would you light first?",
-        hint: "",
-        answer: "Match",
-      },
-      {
-        question: "What is round on both ends and hi in the middle?",
-        hint: "",
-        answer: "Ohio",
-      },
-      {
-        question: "What do you call a dog that sweats so much?",
-        hint: "",
-        answer: "Hotdog",
-      },
-      {
-        question: "What do you call a rabbit with fleas?",
-        hint: "",
-        answer: "Bugs Bunny",
-      },
-      {
-        question: "What rains at the north pole?",
-        hint: "",
-        answer: "Reindeer",
-      },
-      {
-        question: "What kind of apple has a short temper?",
-        hint: "",
-        answer: "Crabapple",
-      },
-      {
-        question: "What do you do with a dead chemist?",
-        hint: "",
-        answer: "Barium",
-      },
-      {
-        question:
-          "What calls for help, when written in capital letters, is the same forwards, backwards and upside down?",
-        hint: "",
-        answer: "SOS",
-      },
-      {
-        question:
-          "What body part is pronounced as one letter but written with three, only two different letters are used?",
-        hint: "",
-        answer: "Eye",
-      },
-      {
-        question:
-          "What is 2+2? What is 4+4? What is 8+8? What is 16+16? Pick a number between 12 and 5",
-        hint: "",
-        answer: "Seven",
-      },
-      {
-        question:
-          "Feed me and I live, give me something to drink and i'll die, What am I?",
-        hint: "",
-        answer: "Fire",
-      },
-      {
-        question:
-          "What keeps things green and keeps kids occupied in the summertime?",
-        hint: "",
-        answer: "Sprinkler",
-      },
-      {
-        question: "Old Mcdonald had this",
-        hint: "",
-        answer: "Farm",
-      },
-      {
-        question:
-          "Poorly behaved children often find themselves sitting in these",
-        hint: "",
-        answer: "Corner",
-      },
-      {
-        question: "Brings you may flowers",
-        hint: "",
-        answer: "Showers",
-      },
-      {
-        question: "A shower that lights up the sky",
-        hint: "",
-        answer: "Meteor",
-      },
-      {
-        question: "Longer than a decade and shorter than a millennium",
-        hint: "",
-        answer: "Century",
-      },
-      {
-        question: "Rolling on floor",
-        hint: "",
-        answer: "Laughing",
-      },
-      {
-        question:
-          "There are four of these, but everyone's favorite seems to be spades",
-        hint: "",
-        answer: "Ace",
-      },
-      {
-        question: "Rabbits do this to carrots and Jason Mraz does this to ears",
-        hint: "",
-        answer: "Nibble",
-      },
-      {
-        question: "These minerals are vital to your health",
-        hint: "",
-        answer: "Vitamin",
-      },
-      {
-        question: "Commits friendly home invasions one night a year",
-        hint: "",
-        answer: "Santa claus",
-      },
-      {
-        question: "Treats said to be based on a shephero's staff",
-        hint: "",
-        answer: "Candy cane",
-      },
-      {
-        question:
-          "Everyone claims to know a way to stop these involuntary contractions but none of them work",
-        hint: "",
-        answer: "Hiccup",
-      },
-      {
-        question: "Has 4 lucky leaves",
-        hint: "",
-        answer: "Shamrock",
-      },
-      {
-        question:
-          "One of the best things you can hope for after whacking a ball with a stick",
-        hint: "",
-        answer: "Home run",
-      },
-      {
-        question: "They put the heat in pop tarts",
-        hint: "",
-        answer: "Toaster",
-      },
-      {
-        question: "What has a ring, but no finger?",
-        hint: "",
-        answer: "Telephone",
-      },
-      {
-        question: "What has four legs, but can't walk?",
-        hint: "",
-        answer: "Table",
-      },
-      {
-        question: "What is higher without the head, than with it?",
-        hint: "",
-        answer: "Pillow",
-      },
-      {
-        question: "What is harder to catch the faster you run?",
-        hint: "",
-        answer: "Breath",
-      },
-      {
-        question: "What invention lets you look right through a wall?",
-        hint: "",
-        answer: "Window",
-      },
-      {
-        question: "What is that you will break every time you name it?",
-        hint: "",
-        answer: "Silence",
-      },
-      {
-        question: "What is made of wood, but can't be sawed?",
-        hint: "",
-        answer: "Sawdust",
-      },
-      {
-        question: "What is a witch's favorite school subject?",
-        hint: "",
-        answer: "Spelling",
-      },
-      {
-        question: "What is an aliens favorite sport?",
-        hint: "",
-        answer: "Spaceball",
-      },
-      {
-        question: "What is the saddest fruit?",
-        hint: "",
-        answer: "Blueberry",
-      },
-      {
-        question: "What is black and white and read all over?",
-        hint: "",
-        answer: "Newspaper",
-      },
-      {
-        question: "What is easy to get into, and hard to get out of?",
-        hint: "",
-        answer: "Trouble",
-      },
-      {
-        question: "What is there more of the less you see?",
-        hint: "",
-        answer: "Darkness",
-      },
-      {
-        question:
-          "If two hours ago, it was as long after one o'clock in the afternoon as it was before one o'clock in the morning, what time would it be now?",
-        hint: "",
-        answer: "Nine",
-      },
-      {
-        question: "What is as big as you are and yet does not weigh anything?",
-        hint: "",
-        answer: "Shadow",
-      },
-      {
-        question: "What types of words are these: Madam, Civic, Eye, Level?",
-        hint: "",
-        answer: "Palindrome",
-      },
-      {
-        question:
-          "When you have me, you feel like sharing me. But, if you do share me, you don't have me. What am I?",
-        hint: "",
-        answer: "Secret",
-      },
-      {
-        question:
-          "The person who makes it has no need for it. The person who purchases it does not use it. The person who does use it does not know he or she is. What is it?",
-        hint: "",
-        answer: "Coffin",
-      },
-      {
-        question:
-          "It is an insect, and the first part of its name is the name of another insect. What is it?",
-        hint: "",
-        answer: "Beetle",
-      },
-      {
-        question:
-          "What english word retains the same pronunciation, even after you take away four of its five letters?",
-        hint: "",
-        answer: "Queue",
-      },
-      {
-        question: "What becomes white when it is dirty?",
-        hint: "",
-        answer: "Blackboard",
-      },
-      {
-        question:
-          "What word of five letters has only one left when two letters are removed?",
-        hint: "",
-        answer: "Stone",
-      },
-      {
-        question: "How many 9's are there between 1 and 100?",
-        hint: "",
-        answer: "Twenty",
-      },
-      {
-        question: "Which vehicle is spelled the same forwards and backwards?",
-        hint: "",
-        answer: "Racecar",
-      },
-      {
-        question:
-          "I am lighter than air but a million men cannot lift me up, What am I?",
-        hint: "",
-        answer: "Bubble",
-      },
-      {
-        question:
-          "Five men were eating apples, a finished before B, but behind C. D finished before E, but behind B. What was the finishing order?",
-        hint: "",
-        answer: "CABDE",
-      },
-      {
-        question: "David's father has three sons: Snap, Crackle, and ?",
-        hint: "",
-        answer: "David",
-      },
-      {
-        question:
-          "It is everything to someone, and nothing to everyone else. What is it?",
-        hint: "",
-        answer: "Mind",
-      },
-      {
-        question: "What has a mouth but can't chew?",
-        hint: "",
-        answer: "River",
-      },
-      {
-        question:
-          "If it is two hours later, then it will take half as much time till it's midnight as it would be if it were an hour later. What time is it?",
-        hint: "",
-        answer: "Nine",
-      },
-      {
-        question: "Forward I am heavy, backwards I am not. What am I?",
-        hint: "",
-        answer: "Ton",
-      },
-      {
-        question:
-          "What object has keys that open no locks, space but no room, and you can enter but not go in?",
-        hint: "",
-        answer: "Keyboard",
-      },
-    ];
-    setTotPuzzles(questions.length)
-    setPuzzles(questions)
-  }, [])
-
-  useEffect(() => {
     if(userData != null && (score != 0 || totalMove != 0)){
       let data = userData
       if(data.highScore < score){
@@ -666,6 +64,608 @@ function App() {
       }
       
       setLeaderboard(leaderboardData.slice(0, 10))
+
+      const questions = [
+        {
+          question:
+            "There are two ducks in front of a duck, two ducks behind a duck and a duck in the middle. How many ducks are there?",
+          hint: "Put numeric value",
+          answer: 3,
+        },
+        {
+          question: "Alex is Charlie's father. Who of them was born later?",
+          hint: "",
+          answer: "Charlie",
+        },
+        {
+          question:
+            "The giraffe is taller than the kangaroo but shorter than the palm. Which animal is the tallest?",
+          hint: "",
+          answer: "giraffe",
+        },
+        {
+          question:
+            "There are 4 floors in the hotel. The higher the floor, the more people live there. Which floor does the elevator go to most often?",
+          hint: "Put numeric value",
+          answer: 1,
+        },
+        {
+          question:
+            "There are 10 fingers on two hands. How many fingers are there on ten hands?",
+          hint: "Put numeric value",
+          answer: 50,
+        },
+        {
+          question:
+            "A man has 53 socks in his drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are fused and he is completely in the dark. How many socks must he take out to make 100 per cent certain he has a pair of black socks?",
+          hint: "Put numeric value",
+          answer: 40,
+        },
+        {
+          question:
+            "How many cases do you need if you have to pack 112 pairs of shoes into cases that each hold 28 shoes?",
+          hint: "Put numeric value",
+          answer: 8,
+        },
+        {
+          question: "7, 14, 42, 168, ?",
+          hint: "",
+          answer: "840",
+        },
+        {
+          question:
+            "Mr Smith has 4 daughters. Each of his daughters has a brother. How many children does Mr Smith have?",
+          hint: "Put numeric value",
+          answer: "5",
+        },
+        {
+          question: "How many squares are there on the chessboard? ",
+          hint: "x",
+          answer: "204",
+        },
+        {
+          question: "3P = 12, P + 2Y = 10, Y - B = 2, P + Y * B = ? ",
+          hint: "",
+          answer: "5",
+        },
+        {
+          question:
+            "RACECAR, MURDRUM, SAGAS, ATTACK, and REPAPER. Find the odd one out.",
+          hint: "",
+          answer: "ATTACK",
+        },
+        {
+          question: "Which letter of the alphabet has the most water?",
+          hint: "",
+          answer: "C",
+        },
+        {
+          question: "What kind of dog keeps the best time?",
+          hint: "",
+          answer: "Watchdog",
+        },
+        {
+          question:
+            "What time of day, when written in a capital letters, is the same forwards, backwards and upside down?",
+          hint: "",
+          answer: "Noon",
+        },
+        {
+          question: "Laughing Out",
+          hint: "",
+          answer: "Loud",
+        },
+        {
+          question: "A tasty reward given to well behaved dogs and kids",
+          hint: "",
+          answer: "Treat",
+        },
+        {
+          question: "A caribbean shape that makes ships disappear",
+          hint: "",
+          answer: "Triangle",
+        },
+        {
+          question: "It takes two people to do this",
+          hint: "",
+          answer: "Tango",
+        },
+        {
+          question: "What has a face and two hands but no arms or legs?",
+          hint: "",
+          answer: "Clock",
+        },
+        {
+          question:
+            "What five-letter word becomes shorter when you add two letters to it?",
+          hint: "",
+          answer: "Short",
+        },
+        {
+          question:
+            "What word begins and ends with an 'E' but only has one letter?",
+          hint: "",
+          answer: "Envelope",
+        },
+        {
+          question: "What has a neck but no head?",
+          hint: "",
+          answer: "Bottle",
+        },
+        {
+          question: "What type of cheese is made backwards?",
+          hint: "",
+          answer: "Edam",
+        },
+        {
+          question: "What gets wetter as it dries?",
+          hint: "",
+          answer: "Towel",
+        },
+        {
+          question: "Which letter of the alphabet has the most water?",
+          hint: "",
+          answer: "C",
+        },
+        {
+          question:
+            "What starts with a 'P', ends with an 'E' and has thousands of letters?",
+          hint: "",
+          answer: "Post Office",
+        },
+        {
+          question: "What has to be broken before you can eat it?",
+          hint: "",
+          answer: "Egg",
+        },
+        {
+          question: "What begins with T, ends with T and has T in it?",
+          hint: "",
+          answer: "Teapot",
+        },
+        {
+          question: "Teddy bears are never hungry because they are always what?",
+          hint: "",
+          answer: "Stuffed",
+        },
+        {
+          question: "What belongs to you but others use it more than you do?",
+          hint: "",
+          answer: "Name",
+        },
+        {
+          question:
+            "The more you take always, the larger it becomes? What is it?",
+          hint: "",
+          answer: "Hole",
+        },
+        {
+          question: "What is full of holes, but can still hold a lot of water?",
+          hint: "",
+          answer: "Sponge",
+        },
+        {
+          question: "Where do fish keep their money?",
+          hint: "",
+          answer: "Riverbank",
+        },
+        {
+          question:
+            "What do you get when you cross an automobile with a household animal?",
+          hint: "",
+          answer: "Carpet",
+        },
+        {
+          question:
+            "Mary's father has 4 children; three are named Nana, Nene, and Nini. So what is the 4th child's name?",
+          hint: "",
+          answer: "Mary",
+        },
+        {
+          question: "What bone has a sense of humor?",
+          hint: "",
+          answer: "Humorous",
+        },
+        {
+          question:
+            "The more of them you take, the more you leave behind. What are they?",
+          hint: "",
+          answer: "Footsteps",
+        },
+        {
+          question: "What is that you will break every time you name it?",
+          hint: "",
+          answer: "Silence",
+        },
+        {
+          question: "What has four fingers and one thumb, but is not alive?",
+          hint: "",
+          answer: "Glove",
+        },
+        {
+          question: "What flies without wings?",
+          hint: "",
+          answer: "Time",
+        },
+        {
+          question: "What turns everything around, but does not move?",
+          hint: "",
+          answer: "Mirror",
+        },
+        {
+          question: "What is half of two plus two?",
+          hint: "",
+          answer: "Three",
+        },
+        {
+          question: "What word looks the same upside down and backwards?",
+          hint: "",
+          answer: "Swims",
+        },
+        {
+          question: "What kind of fish chases a mouse?",
+          hint: "",
+          answer: "Catfish",
+        },
+        {
+          question:
+            "Your mother's brother's only brother-in-law is asleep on your coach. Who is asleep on your couch?",
+          hint: "",
+          answer: "Dad",
+        },
+        {
+          question: "What's the difference between here and there?",
+          hint: "",
+          answer: "T",
+        },
+        {
+          question: "What goes up and down without moving?",
+          hint: "",
+          answer: "Stairs",
+        },
+        {
+          question: "Take off my skin and I won't cry, but you will, What am I?",
+          hint: "",
+          answer: "Onion",
+        },
+        {
+          question:
+            "What doesn't get any wetter, no matter how much rain falls on it?",
+          hint: "",
+          answer: "Water",
+        },
+        {
+          question: "What sits in a corner while traveling all around the world?",
+          hint: "",
+          answer: "Stamp",
+        },
+        {
+          question:
+            "I have a face, two arms, and two hands, yet I can not move. I count to twelve, yet I can not speak. I can still tell you something everyday.",
+          hint: "",
+          answer: "Clock",
+        },
+        {
+          question:
+            "You enter a dark room. You have only one match. There is an oil lamp, a furnace, and a stove in the room. Which would you light first?",
+          hint: "",
+          answer: "Match",
+        },
+        {
+          question: "What is round on both ends and hi in the middle?",
+          hint: "",
+          answer: "Ohio",
+        },
+        {
+          question: "What do you call a dog that sweats so much?",
+          hint: "",
+          answer: "Hotdog",
+        },
+        {
+          question: "What do you call a rabbit with fleas?",
+          hint: "",
+          answer: "Bugs Bunny",
+        },
+        {
+          question: "What rains at the north pole?",
+          hint: "",
+          answer: "Reindeer",
+        },
+        {
+          question: "What kind of apple has a short temper?",
+          hint: "",
+          answer: "Crabapple",
+        },
+        {
+          question: "What do you do with a dead chemist?",
+          hint: "",
+          answer: "Barium",
+        },
+        {
+          question:
+            "What calls for help, when written in capital letters, is the same forwards, backwards and upside down?",
+          hint: "",
+          answer: "SOS",
+        },
+        {
+          question:
+            "What body part is pronounced as one letter but written with three, only two different letters are used?",
+          hint: "",
+          answer: "Eye",
+        },
+        {
+          question:
+            "What is 2+2? What is 4+4? What is 8+8? What is 16+16? Pick a number between 12 and 5",
+          hint: "",
+          answer: "Seven",
+        },
+        {
+          question:
+            "Feed me and I live, give me something to drink and i'll die, What am I?",
+          hint: "",
+          answer: "Fire",
+        },
+        {
+          question:
+            "What keeps things green and keeps kids occupied in the summertime?",
+          hint: "",
+          answer: "Sprinkler",
+        },
+        {
+          question: "Old Mcdonald had this",
+          hint: "",
+          answer: "Farm",
+        },
+        {
+          question:
+            "Poorly behaved children often find themselves sitting in these",
+          hint: "",
+          answer: "Corner",
+        },
+        {
+          question: "Brings you may flowers",
+          hint: "",
+          answer: "Showers",
+        },
+        {
+          question: "A shower that lights up the sky",
+          hint: "",
+          answer: "Meteor",
+        },
+        {
+          question: "Longer than a decade and shorter than a millennium",
+          hint: "",
+          answer: "Century",
+        },
+        {
+          question: "Rolling on floor",
+          hint: "",
+          answer: "Laughing",
+        },
+        {
+          question:
+            "There are four of these, but everyone's favorite seems to be spades",
+          hint: "",
+          answer: "Ace",
+        },
+        {
+          question: "Rabbits do this to carrots and Jason Mraz does this to ears",
+          hint: "",
+          answer: "Nibble",
+        },
+        {
+          question: "These minerals are vital to your health",
+          hint: "",
+          answer: "Vitamin",
+        },
+        {
+          question: "Commits friendly home invasions one night a year",
+          hint: "",
+          answer: "Santa claus",
+        },
+        {
+          question: "Treats said to be based on a shephero's staff",
+          hint: "",
+          answer: "Candy cane",
+        },
+        {
+          question:
+            "Everyone claims to know a way to stop these involuntary contractions but none of them work",
+          hint: "",
+          answer: "Hiccup",
+        },
+        {
+          question: "Has 4 lucky leaves",
+          hint: "",
+          answer: "Shamrock",
+        },
+        {
+          question:
+            "One of the best things you can hope for after whacking a ball with a stick",
+          hint: "",
+          answer: "Home run",
+        },
+        {
+          question: "They put the heat in pop tarts",
+          hint: "",
+          answer: "Toaster",
+        },
+        {
+          question: "What has a ring, but no finger?",
+          hint: "",
+          answer: "Telephone",
+        },
+        {
+          question: "What has four legs, but can't walk?",
+          hint: "",
+          answer: "Table",
+        },
+        {
+          question: "What is higher without the head, than with it?",
+          hint: "",
+          answer: "Pillow",
+        },
+        {
+          question: "What is harder to catch the faster you run?",
+          hint: "",
+          answer: "Breath",
+        },
+        {
+          question: "What invention lets you look right through a wall?",
+          hint: "",
+          answer: "Window",
+        },
+        {
+          question: "What is that you will break every time you name it?",
+          hint: "",
+          answer: "Silence",
+        },
+        {
+          question: "What is made of wood, but can't be sawed?",
+          hint: "",
+          answer: "Sawdust",
+        },
+        {
+          question: "What is a witch's favorite school subject?",
+          hint: "",
+          answer: "Spelling",
+        },
+        {
+          question: "What is an aliens favorite sport?",
+          hint: "",
+          answer: "Spaceball",
+        },
+        {
+          question: "What is the saddest fruit?",
+          hint: "",
+          answer: "Blueberry",
+        },
+        {
+          question: "What is black and white and read all over?",
+          hint: "",
+          answer: "Newspaper",
+        },
+        {
+          question: "What is easy to get into, and hard to get out of?",
+          hint: "",
+          answer: "Trouble",
+        },
+        {
+          question: "What is there more of the less you see?",
+          hint: "",
+          answer: "Darkness",
+        },
+        {
+          question:
+            "If two hours ago, it was as long after one o'clock in the afternoon as it was before one o'clock in the morning, what time would it be now?",
+          hint: "",
+          answer: "Nine",
+        },
+        {
+          question: "What is as big as you are and yet does not weigh anything?",
+          hint: "",
+          answer: "Shadow",
+        },
+        {
+          question: "What types of words are these: Madam, Civic, Eye, Level?",
+          hint: "",
+          answer: "Palindrome",
+        },
+        {
+          question:
+            "When you have me, you feel like sharing me. But, if you do share me, you don't have me. What am I?",
+          hint: "",
+          answer: "Secret",
+        },
+        {
+          question:
+            "The person who makes it has no need for it. The person who purchases it does not use it. The person who does use it does not know he or she is. What is it?",
+          hint: "",
+          answer: "Coffin",
+        },
+        {
+          question:
+            "It is an insect, and the first part of its name is the name of another insect. What is it?",
+          hint: "",
+          answer: "Beetle",
+        },
+        {
+          question:
+            "What english word retains the same pronunciation, even after you take away four of its five letters?",
+          hint: "",
+          answer: "Queue",
+        },
+        {
+          question: "What becomes white when it is dirty?",
+          hint: "",
+          answer: "Blackboard",
+        },
+        {
+          question:
+            "What word of five letters has only one left when two letters are removed?",
+          hint: "",
+          answer: "Stone",
+        },
+        {
+          question: "How many 9's are there between 1 and 100?",
+          hint: "",
+          answer: "Twenty",
+        },
+        {
+          question: "Which vehicle is spelled the same forwards and backwards?",
+          hint: "",
+          answer: "Racecar",
+        },
+        {
+          question:
+            "I am lighter than air but a million men cannot lift me up, What am I?",
+          hint: "",
+          answer: "Bubble",
+        },
+        {
+          question:
+            "Five men were eating apples, a finished before B, but behind C. D finished before E, but behind B. What was the finishing order?",
+          hint: "",
+          answer: "CABDE",
+        },
+        {
+          question: "David's father has three sons: Snap, Crackle, and ?",
+          hint: "",
+          answer: "David",
+        },
+        {
+          question:
+            "It is everything to someone, and nothing to everyone else. What is it?",
+          hint: "",
+          answer: "Mind",
+        },
+        {
+          question: "What has a mouth but can't chew?",
+          hint: "",
+          answer: "River",
+        },
+        {
+          question:
+            "If it is two hours later, then it will take half as much time till it's midnight as it would be if it were an hour later. What time is it?",
+          hint: "",
+          answer: "Nine",
+        },
+        {
+          question: "Forward I am heavy, backwards I am not. What am I?",
+          hint: "",
+          answer: "Ton",
+        },
+        {
+          question:
+            "What object has keys that open no locks, space but no room, and you can enter but not go in?",
+          hint: "",
+          answer: "Keyboard",
+        },
+      ];
+
+      questions.sort(() => Math.random() - 0.5)
+      setTotPuzzles(questions.length)
+      setPuzzles(questions)
     }
   }, [user, score, totalMove])
 

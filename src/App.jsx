@@ -12,12 +12,13 @@ function App() {
   const [answerMode, setAnswerMode] = useState(false)
   const [score, setScore] = useState(0)
   const [user, setUser] = useState(null)
-  const [userData, setUserData] = useState(null)
+  const [userData, setUserData] = useState()
   const [userMessage, setUserMessage] = useState(null)
   const [gameOverMessage, setGameOverMessage] = useState(null)
   const [leaderboard, setLeaderboard] = useState(null)
   const [puzzles, setPuzzles] = useState(null)
   const [totPuzzles, setTotPuzzles] = useState(null)
+  const [highScore, setHighScore] = useState(null)
   console.log("App rendering")
 
   useEffect(() => {
@@ -42,25 +43,25 @@ function App() {
       {
         question:
           "There are 4 floors in the hotel. The higher the floor, the more people live there. Which floor does the elevator go to most often?",
-        hint: "",
+        hint: "Put numeric value",
         answer: 1,
       },
       {
         question:
           "There are 10 fingers on two hands. How many fingers are there on ten hands?",
-        hint: "",
+        hint: "Put numeric value",
         answer: 50,
       },
       {
         question:
           "A man has 53 socks in his drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are fused and he is completely in the dark. How many socks must he take out to make 100 per cent certain he has a pair of black socks?",
-        hint: "",
+        hint: "Put numeric value",
         answer: 40,
       },
       {
         question:
           "How many cases do you need if you have to pack 112 pairs of shoes into cases that each hold 28 shoes?",
-        hint: "",
+        hint: "Put numeric value",
         answer: 8,
       },
       {
@@ -71,12 +72,12 @@ function App() {
       {
         question:
           "Mr Smith has 4 daughters. Each of his daughters has a brother. How many children does Mr Smith have?",
-        hint: "",
+        hint: "Put numeric value",
         answer: "5",
       },
       {
         question: "How many squares are there on the chessboard? ",
-        hint: "",
+        hint: "x",
         answer: "204",
       },
       {
@@ -625,11 +626,13 @@ function App() {
   useEffect(() => {
     if(userData != null && (score != 0 || totalMove != 0)){
       let data = userData
-      if(data.highScore < score)
+      if(data.highScore < score){
         data.highScore = score
+        setHighScore(score);
+      }
       
       data["scores"][data["scores"].length - 1] = {"score": score, "move": totalMove}
-      setUserData(data);
+      setUserData(() => data);
 
       // update the last item (11th) in leaderboard (to decide later whether to consider it for top 10)
       let leaderboardData = JSON.parse(localStorage.getItem("store"))["leaderboard"]
@@ -774,8 +777,8 @@ function App() {
         }
       }
 
-      setUserData(newUserData);
-
+      setUserData(newUserData)
+      setHighScore(newUserData["highScore"])
       document.getElementById("game-container").classList.remove("game-container-blur")
       document.getElementById("nameForm").classList.add("hidden")
     }
@@ -1312,7 +1315,7 @@ function App() {
           <p>{score}</p>
           <p>SCORE</p>
           <hr />
-          <p>High Score: {userData && userData["highScore"]}</p>
+          <p>High Score: {highScore}</p>
           <p>Total Move: {totalMove}</p>
           <hr />
           <p>{user}</p>

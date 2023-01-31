@@ -488,7 +488,7 @@ svg{
 }
 
 #leaderboard{
-  height: calc(100vh - 2rem);
+  height: calc(calc(var(--vh, 1vh)*100) - 2rem);
   width: 20rem;
   position: absolute;
   left: calc(50vw - 10rem);
@@ -576,7 +576,8 @@ svg{
 @media screen and (max-width: 430px) {
   #leaderboard{
     width: 100vw;
-    height: 100vh;
+    height: 100vh; /* fallback */
+    height: calc(var(--vh, 1vh) * 100);
     left: 0;
     top: 0;
     border-radius: 0;

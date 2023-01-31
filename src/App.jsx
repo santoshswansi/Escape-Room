@@ -796,7 +796,7 @@ function App() {
 
   return (
     <>
-      <div id="game-container" className="game-container-blur">
+      <div id="game-container" className="game-container-blur" style={{"--vh": window.innerHeight*0.01 + 'px'}}>
         <svg
           width="183"
           height="551"

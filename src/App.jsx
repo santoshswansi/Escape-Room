@@ -19,6 +19,7 @@ function App() {
   const [puzzles, setPuzzles] = useState(null)
   const [totPuzzles, setTotPuzzles] = useState(null)
   const [highScore, setHighScore] = useState(null)
+  const [height, setHeight] = useState(window.innerHeight*0.01 + 'px')
   console.log("App rendering")
 
   useEffect(() => {
@@ -669,6 +670,10 @@ function App() {
     }
   }, [user, score, totalMove])
 
+  useEffect(() => {
+    window.addEventListener("resize", () => setHeight(window.innerHeight*0.01 + 'px'))
+  }, [])
+
   function handleAnsSubmit(e){
     e.preventDefault()
     if(answer == null || answer == ""){
@@ -796,7 +801,7 @@ function App() {
 
   return (
     <>
-      <div id="game-container" className="game-container-blur" style={{"--vh": window.innerHeight*0.01 + 'px'}}>
+      <div id="game-container" className="game-container-blur" style={{"--vh": height}}>
         <svg
           width="183"
           height="551"
